@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 type Todo = {
   id: string
@@ -53,8 +54,9 @@ export default function Home() {
       <section className="container mx-auto px-4 pt-24 pb-20">
         <div className="max-w-2xl mx-auto">
           <Card>
-            <CardHeader>
-              <CardTitle className="text-3xl font-bold text-center">Simple Todo App</CardTitle>
+            <CardHeader className="flex flex-row items-center justify-between">
+              <CardTitle className="text-3xl font-bold">Simple Todo App</CardTitle>
+              <ThemeToggle />
             </CardHeader>
             <CardContent>
               <div className="flex gap-2 mb-6">
@@ -111,3 +113,5 @@ export default function Home() {
     </div>
   )
 }
+
+
