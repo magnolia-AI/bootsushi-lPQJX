@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { motion } from 'framer-motion'
 import Video from '@/components/video'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 type Todo = {
   id: string
@@ -114,17 +115,18 @@ export default function Home() {
       <section className="container mx-auto px-4 py-12">
         <div className="max-w-2xl mx-auto">
           <Card className="shadow-lg">
-            <CardHeader>
+            <CardHeader className="flex flex-row items-center justify-between">
               <CardTitle className="text-3xl font-bold text-center flex items-center justify-center gap-3">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
                   Smart Todo App
                 </span>
               </CardTitle>
-              <p className="text-center text-muted-foreground">
-                Organize your life, one task at a time
-              </p>
+              <ThemeToggle />
             </CardHeader>
             <CardContent>
+              <p className="text-center text-muted-foreground mb-6">
+                Organize your life, one task at a time
+              </p>
               <div className="flex gap-2 mb-6">
                 <Input
                   type="text"
@@ -237,6 +239,8 @@ export default function Home() {
     </div>
   )
 }
+
+
 
 
 
