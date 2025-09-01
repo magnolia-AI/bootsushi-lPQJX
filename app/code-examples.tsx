@@ -1,5 +1,9 @@
 // Example Code Blocks
 
+// Import all React hooks at the top to avoid duplicate imports
+import { useState, useContext, createContext, ComponentType } from 'react';
+import { Component } from 'react';
+
 // 1. TypeScript Interface
 interface User {
   id: number;
@@ -9,7 +13,6 @@ interface User {
 }
 
 // 2. React Component with TypeScript
-import { useState } from 'react';
 
 interface Props {
   title: string;
@@ -61,7 +64,6 @@ async function fetchUserData(id: number): Promise<User | null> {
 }
 
 // 4. Custom Hook
-import { useState } from 'react';
 
 function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T) => void] {
   const [storedValue, setStoredValue] = useState<T>(() => {
@@ -115,7 +117,6 @@ const utils = {
 };
 
 // 6. Class Component (legacy but still relevant)
-import { Component } from 'react';
 
 interface CounterState {
   count: number;
@@ -146,7 +147,6 @@ class Counter extends Component<{}, CounterState> {
 }
 
 // 7. Context API Example
-import { createContext, useContext, useState } from 'react';
 
 interface ThemeContextType {
   theme: 'light' | 'dark';
@@ -178,7 +178,6 @@ export const useTheme = () => {
 };
 
 // 8. Higher-Order Component (HOC) Pattern
-import { ComponentType } from 'react';
 
 interface WithLoadingProps {
   loading: boolean;
@@ -265,4 +264,6 @@ class ApiService {
 }
 
 export const apiService = new ApiService('/api');
+
+
 
